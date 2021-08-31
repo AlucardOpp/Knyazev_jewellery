@@ -1,0 +1,16 @@
+.page {
+  height: 100%;
+
+  &--hidden {
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &--overflow {
+    overflow-y: hidden;
+    position: static;
+  }
+}
