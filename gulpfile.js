@@ -76,7 +76,7 @@ gulp.task('webp', function () {
 });
 
 gulp.task('images', function () {
-  return gulp.src('source/img/**/*.{png,jpg,svg}')
+  return gulp.src('source/img/**/*.{png,jpg}')
       .pipe(imagemin([
         imagemin.optipng({
           optimizationLevel: 3
@@ -99,6 +99,7 @@ gulp.task('sprite', function () {
       .pipe(rename('sprite_auto.svg'))
       .pipe(gulp.dest('build/img'));
 });
+
 
 gulp.task('html', function () {
   return gulp.src('source/*.html')

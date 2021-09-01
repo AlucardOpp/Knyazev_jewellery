@@ -1,0 +1,25 @@
+.links {
+  margin-right: -9px;
+}
+
+.links li {
+  max-width: 177px;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: $tablet-width) {
+  .links {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .links {
+    margin-bottom: 41px;
+    margin-right: 122px;
+  }
+
+  .links li {
+    max-width: none;
+  }
+}

@@ -1,0 +1,15 @@
+.information {
+  margin-right: 25px;
+}
+
+.information li {
+  max-width: 136px;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: $mobile-width) {
+  .information {
+    margin-bottom: 44px;
+    margin-right: 174px;
+  }
+}
