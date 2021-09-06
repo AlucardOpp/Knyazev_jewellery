@@ -1,0 +1,69 @@
+.cards ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards__item a {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.cards__item h3 {
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: 500;
+  color: $black;
+  max-width: 194px;
+  margin: 22px auto 6px auto;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.cards__item span {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 130%;
+  color: $black;
+  max-width: 44px;
+  overflow-wrap: break-word;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.cards ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards__pagination {
+  margin-right: 15px;
+  color: $footer-mailing-grey;
+  line-height: 130%;
+  font-size: 16px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active {
+    color: black;
+  }
+}
+
+.cards__pagination button {
+  border: none;
+  padding: 0;
+  color: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  background-color: transparent;
+}
