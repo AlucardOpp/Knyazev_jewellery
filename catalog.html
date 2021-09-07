@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jewellery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Jewellery - Perfection made to be yours">
+  <link rel="preload" href="./fonts/Poppins-Regular.woff2" as="font" crossorigin="">
+  <link rel="preload" href="./fonts/Poppins-Medium.woff2" as="font" crossorigin="">
+  <link rel="preload" href="./fonts/Poppins-Bold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="./fonts/CormorantGaramond-Italic.woff2" as="font" crossorigin="">
+  <link rel="preload" href="./fonts/CormorantGaramond-SemiBold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="./fonts/CormorantGaramond-Bold.woff2" as="font" crossorigin="">
+  <link rel="stylesheet" href="./css/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="body">
+  <header class="page-header page-header--catalog page-header--nojs">
+    <div class="page-header__wrapper">
+      <form class="page-header__field page-header__field--nojs">
+        <label class="visually-hidden" for="search">Search</label>
+        <input type="text" id="search" name="search" aria-label="Search field" placeholder="Type here to search" autocomplete="off">
+      </form>
+      <button class="page-header__menu-button page-header__menu-button--nojs" type="button" aria-label=""></button>
+      <a class="page-header__logo page-header__logo--nojs" href="./main.html" aria-label="Go to home page">
+        <svg width="66" height="66">
+          <use xlink:href="./img/sprite_auto.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <div class="page-header__container">
+        <a class="page-header__log" href="#" aria-label="">Login</a>
+        <a class="page-header__cart page-header__cart--nojs" href="#" aria-label="">
+          <p>Cart</p>
+          <span>0</span>
+          <svg width="20" height="18">
+            <use xlink:href="./img/sprite_auto.svg#icon-cart"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="page-header__menu page-header__menu--nojs">
+      <div class="page-header__links">
+        <ul>
+          <li>
+            <a href="#" aria-label="">What’s new</a>
+          </li>
+          <li>
+            <a href="#" aria-label="">Chokers</a>
+          </li>
+          <li>
+            <a href="#" aria-label="">Necklaces</a>
+          </li>
+          <li>
+            <a href="#" aria-label="">Rings</a>
+          </li>
+          <li>
+            <a href="#" aria-label="">Earrings</a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-header__information">
+        <ul>
+          <li>
+            <a href="#" aria-label="">About CH</a>
+          </li>
+          <li>
+            <a href="#" aria-label="">Stores & Hours</a>
+          </li>
+          <li>
+            <a href="#" aria-label="">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <a class="page-header__login" href="#" aria-label="">Login</a>
+    </div>
+    <div class="page-header__promo page-header__promo--catalog">
+      <h1>ALL JEWELLERY</h1>
+      <p>Discover picks of fashion's finest trends in our jewellery catalog</p>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="page-main__wrapper">
+      <section class="filter">
+        <form class="filter__form" action="https://echo.htmlacademy.ru" method="post">
+          <h2 class="visually-hidden">Filter</h2>
+          <div class="filter__list">
+            <ul>
+              <li data-accordion="product" class="filter__tab">
+                <button data-accordion="product" type="button" class="filter__toggle" aria-label="Open the product list">Product</button>
+                <ul>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-necklaces" name="necklaces" aria-label="">
+                    <label for="filter-necklaces">Necklaces</label>
+                  </li>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-chokers" name="chokers" aria-label="">
+                    <label for="filter-chokers">Chokers</label>
+                  </li>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-rings" name="rings" aria-label="">
+                    <label for="filter-rings">Rings</label>
+                  </li>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-earing" name="earing" aria-label="">
+                    <label for="filter-earing">Earrings</label>
+                  </li>
+                </ul>
+              </li>
+              <li data-accordion="material" class="filter__tab">
+                <button data-accordion="material" type="button" class="filter__toggle" aria-label="Open the product list">Material</button>
+                <ul>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-gold" name="gold" aria-label="">
+                    <label for="filter-gold">Gold</label>
+                  </li>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-silver" name="silver" aria-label="">
+                    <label for="filter-silver">Silver</label>
+                  </li>
+                </ul>
+              </li>
+              <li data-accordion="collection" class="filter__tab">
+                <button data-accordion="collection" type="button" class="filter__toggle" aria-label="Open the product list">Collection</button>
+                <ul>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-pinkflamingo" name="pinkflamingo" aria-label="">
+                    <label for="filter-pinkflamingo">Pink flamingo</label>
+                  </li>
+                  <li class="filter__item">
+                    <input type="checkbox" class="visually-hidden" id="filter-dreams" name="dreams" aria-label="">
+                    <label for="filter-dreams">Dreams</label>
+                  </li>
+                </ul>
+              </li>
+              <li data-accordion="price" class="filter__tab">
+                <button data-accordion="price" type="button" class="filter__toggle" aria-label="Open the product list">Price</button>
+                <div class="filter__range-controls">
+                  <div class="filter__scale">
+                    <div class="filter__bar"></div>
+                  </div>
+                  <div class="filter__range-toggle filter__range-toggle--min" tabindex="0"><span>$ 55</span></div>
+                  <div class="filter__range-toggle filter__range-toggle--max" tabindex="0"><span>$ 155</span></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button class="filter__submit" type="submit" aria-label="Apply filter selections">Apply</button>
+          <button class="filter__clear" type="button" aria-label="Clear filter selections">Clear All</button>
+        </form>
+      </section>
+      <section class="cards">
+        <h2 class="visually-hidden">Goods</h2>
+        <ul>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/double-pearl-earrings.webp 1x, ./img/double-pearl-earrings@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/double-pearl-earrings.jpg" srcset="./img/double-pearl-earrings@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Double pearl earrings </h3>
+              <span>$ 115</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/black-choker-gold-bead.webp 1x, ./img/black-choker-gold-bead@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/black-choker-gold-bead.jpg" srcset="./img/black-choker-gold-bead@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Choker with gold bead</h3>
+              <span>$ 55</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/gold-layered-necklace.webp 1x, ./img/gold-layered-necklace@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/gold-layered-necklace.jpg" srcset="./img/gold-layered-necklace@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Gold layered necklace</h3>
+              <span>$ 155</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/blue-gemstone-pendant.webp 1x, ./img/blue-gemstone-pendant@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/blue-gemstone-pendant.jpg" srcset="./img/blue-gemstone-pendant@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Blue gemstone pendant</h3>
+              <span>$ 105</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/boho-earrings.webp 1x, ./img/boho-earrings@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/boho-earrings.jpg" srcset="./img/boho-earrings@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Boho earrings</h3>
+              <span>$ 75</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/bird-necklace.webp 1x, ./img/bird-necklace@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/bird-necklace.jpg" srcset="./img/bird-necklace@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Gold bird necklace</h3>
+              <span>$ 135</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/black-leather-choker-necklace.webp 1x, ./img/black-leather-choker-necklace@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/black-leather-choker-necklace.jpg" srcset="./img/black-leather-choker-necklace@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Black leather choker</h3>
+              <span>$ 85</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/purple-gemstone-necklace-catalog.webp 1x, ./img/purple-gemstone-necklace-catalog@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/purple-gemstone-necklace-catalog.jpg" srcset="./img/purple-gemstone-necklace-catalog@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Necklace with amethyst</h3>
+              <span>$ 145</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/elephant-earrings.webp 1x, ./img/elephant-earrings@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/elephant-earrings.jpg" srcset="./img/elephant-earrings@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Elephant earrings</h3>
+              <span>$ 95</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/threader-necklace-closeup.webp 1x, ./img/threader-necklace-closeup@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/threader-necklace-closeup.jpg" srcset="./img/threader-necklace-closeup@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Threader necklace</h3>
+              <span>$ 115</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/origami-crane-necklace.webp 1x, ./img/origami-crane-necklace@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/origami-crane-necklace.jpg" srcset="./img/origami-crane-necklace@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Origami crane necklace</h3>
+              <span>$ 105</span>
+            </a>
+          </li>
+          <li class="cards__item">
+            <a class="cards__link" href="#" aria-label="">
+              <picture>
+                <source type="image/webp" srcset="./img/marble-earrings.webp 1x, ./img/marble-earrings@2x.webp 2x">
+                <!-- 1х: 270px; 2x: 540px -->
+                <img src="./img/marble-earrings.jpg" srcset="./img/marble-earrings@2x.jpg 2x" width="270" height="272" alt="Jewelry picture">
+              </picture>
+              <h3>Marble earrings</h3>
+              <span>$ 95</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="page-main__container">
+      <div class="page-main__numbering">
+        <button class="page-main__button page-main__button--prev" type="button">Previous</button>
+        <ol>
+          <li class="page-main__pagination page-main__pagination--active"><button type="button" aria-label="1 page">1</button></li>
+          <li class="page-main__pagination"><button type="button" aria-label="2 page">2</button></li>
+          <li class="page-main__pagination"><button type="button" aria-label="3 page">3</button></li>
+          <li class="page-main__pagination"><button type="button" aria-label="4 page">4</button></li>
+          <li class="page-main__pagination"><button type="button" aria-label="5 page">5</button></li>
+        </ol>
+        <button class="page-main__button" type="button">Next</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__wrapper">
+      <section class="mailing">
+        <form class="mailing__form" action="https://echo.htmlacademy.ru" method="post">
+          <h2>The good stuff in your inbox </h2>
+          <p>News and updates from CH. No spam, we promise.</p>
+          <div class="mailing__field">
+            <label class="visually-hidden" for="mailing-email">E-mail</label>
+            <input type="text" id="mailing-email" name="mailing-email" aria-label="Mailing E-mail field" placeholder="Your E-mail" autocomplete="off" required="">
+            <button class="mailing__button" type="submit">Sign Up</button>
+          </div>
+        </form>
+      </section>
+      <div class="page-footer__container">
+        <section class="links">
+          <h2 class="visually-hidden">Links</h2>
+          <ul>
+            <li>
+              <a href="#" aria-label="">Ordering & Payment</a>
+            </li>
+            <li>
+              <a href="#" aria-label="">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="#" aria-label="">Returns & Exchanges</a>
+            </li>
+            <li>
+              <a href="#" aria-label="">Delivery</a>
+            </li>
+          </ul>
+        </section>
+        <section class="information">
+          <h2 class="visually-hidden">Information</h2>
+          <ul>
+            <li>
+              <a href="#" aria-label="">About CH</a>
+            </li>
+            <li>
+              <a href="#" aria-label="">Stores & Hours</a>
+            </li>
+            <li>
+              <a href="#" aria-label="">Jobs</a>
+            </li>
+            <li>
+              <a href="#" aria-label="">Contact Us</a>
+            </li>
+          </ul>
+        </section>
+        <section class="socials">
+          <h2 class="visually-hidden">Socials</h2>
+          <ul>
+            <li>
+              <a class="socials__fb" href="#" aria-label=""><img src="./img/fb-mobile.svg" width="12" height="21" alt="Лого Фэйсбука"><span>Facebook</span></a>
+            </li>
+            <li>
+              <a class="socials__inst" href="#" aria-label=""><img src="./img/inst-mobile.svg" width="20" height="21" alt="Лого Инстаграма"><span>Instagram</span></a>
+            </li>
+            <li>
+              <a class="socials__pin" href="#" aria-label=""><img src="./img/pin-mobile.svg" width="20" height="21" alt="Лого Пинтереста"><span>Pinterest</span></a>
+            </li>
+            <li>
+              <a class="socials__twit" href="#" aria-label=""><img src="./img/twit-mobile.svg" width="20" height="18" alt="Лого Твиттера"><span>Twitter</span></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/vendor.js"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
