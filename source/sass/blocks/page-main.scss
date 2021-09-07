@@ -1,0 +1,82 @@
+.page-main {
+  margin-bottom: 75px;
+}
+
+.page-main__wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 21.4% 74.3%;
+  column-gap: 50px;
+
+  @media (max-width: 1209px) {
+    margin: 0 29px 0 20px;
+  }
+}
+
+.page-main__container {
+  padding-top: 37px;
+  border-top: 1px solid $border-top-links-grey;
+}
+
+.page-main__numbering {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 1209px) {
+    margin: 0 20px;
+  }
+}
+
+.page-main__numbering ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 -31px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
+}
+
+.page-main__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $black;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  max-width: 69px;
+  overflow-wrap: break-word;
+
+  &--prev {
+    padding-left: 300px;
+    max-width: 369px;
+  }
+}
+
+.page-main__pagination {
+  margin-right: 14px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.page-main__pagination button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $footer-mailing-grey;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.page-main__pagination--active button {
+  color: $black;
+}

@@ -1,7 +1,15 @@
 .cards ul {
   list-style: none;
-  margin: 0;
+  margin: 0 0 35px 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 30px;
+  row-gap: 36px;
+}
+
+.cards__item {
+  max-width: 270px;
 }
 
 .cards__item a {
@@ -11,6 +19,16 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+}
+
+.cards__link:hover h3,
+.cards__link:hover span {
+  opacity: 0.7;
+}
+
+.cards__link:active h3,
+.cards__link:active span {
+  opacity: 0.4;
 }
 
 .cards__item h3 {
@@ -35,15 +53,6 @@
   text-align: center;
 }
 
-.cards ol {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .cards__pagination {
   margin-right: 15px;
   color: $footer-mailing-grey;
@@ -66,4 +75,12 @@
   line-height: inherit;
   font-size: inherit;
   background-color: transparent;
+}
+
+.cards__item img,
+.cards__item picture {
+  width: 100%;
+  // height: auto;
+  object-fit: cover;
+  vertical-align: bottom;
 }

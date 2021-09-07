@@ -1,5 +1,9 @@
 .page-header {
   margin-bottom: 121px;
+
+  &--catalog {
+    margin-bottom: 80px;
+  }
 }
 
 .page-header__wrapper {
@@ -22,6 +26,14 @@
 
 .page-header__logo {
   margin-left: -50px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
 }
 
 .page-header__logo svg {
@@ -164,6 +176,15 @@
   @media (min-resolution: 2dppx) {
     background-image: url("../img/promo-background-main@2x.jpg");
   }
+
+  &--catalog {
+    min-height: 261px;
+    background-image: url("../img/promo-background-catalog.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/promo-background-catalog@2x.jpg");
+    }
+  }
 }
 
 .page-header__promo h1 {
@@ -182,6 +203,17 @@
   }
 }
 
+.page-header__promo--catalog h1 {
+  font-size: 34px;
+  letter-spacing: 0;
+  margin-bottom: 3px;
+  max-width: 248px;
+
+  &:first-child {
+    padding-top: 92px;
+  }
+}
+
 .page-header__promo p {
   font-weight: 400;
   font-family: "Cormorant Garamond", "Arial", sans-serif;
@@ -193,8 +225,14 @@
   max-width: 229px;
 
   &:last-child {
-    padding-bottom: 178px;
+    padding-bottom: 94px;
   }
+}
+
+.page-header__promo--catalog p {
+  font-size: 22px;
+  max-width: 488px;
+  font-weight: 500;
 }
 
 @media (max-width: $tablet-width) {

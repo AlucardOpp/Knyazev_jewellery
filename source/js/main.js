@@ -14,7 +14,29 @@ const noveltyArrows = document.querySelectorAll('.novelty__arrow');
 const noveltyCards = document.querySelector('.novelty__cards');
 const body = document.querySelector('.body');
 const questions = document.querySelector('.questions');
-const accordionTriggers = questions.querySelectorAll('button');
+const filterList = document.querySelector('.filter__list');
+const filterForm = document.querySelector('.filter__form');
+const filterClearButton = document.querySelector('.filter__clear');
+let mainAccordionTriggers;
+let catalogAccordionTriggers;
+let mainTriggersExist = false;
+let catalogTriggersExist = false;
+
+if (questions) {
+  mainTriggersExist = true;
+  mainAccordionTriggers = questions.querySelectorAll('button');
+}
+
+if (filterList) {
+  catalogTriggersExist = true;
+  catalogAccordionTriggers = filterList.querySelectorAll('button');
+}
+
+if(filterClearButton) {
+  filterClearButton.addEventListener('click', () => {
+    filterForm.reset();
+  });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   $(".novelty__slick").slick({
@@ -26,27 +48,26 @@ document.addEventListener('DOMContentLoaded', function() {
     swipe: false,
 
     responsive: [{
-        breakpoint: 1024,
-        settings: {
-          infinite: true,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          arrows: true,
-          dots: true,
-          swipe: true,
-        }
-      }, {
-        breakpoint: 768,
-        settings: {
-          infinite: true,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          arrows: true,
-          dots: true,
-          swipe: true,
-        }
+      breakpoint: 1024,
+      settings: {
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        arrows: true,
+        dots: true,
+        swipe: true,
       }
-    ]
+    }, {
+      breakpoint: 768,
+      settings: {
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        arrows: true,
+        dots: true,
+        swipe: true,
+      }
+    }]
   });
 });
 
@@ -136,7 +157,7 @@ if (pageHeaderMenuButton) {
   });
 }
 
-const onAccordionClick = (evt) => {
+const onMainAccordionClick = (evt) => {
   const id = evt.target.getAttribute('data-accordion');
   const item = questions.querySelector('li[data-accordion="' + id + '"]');
 
@@ -145,8 +166,23 @@ const onAccordionClick = (evt) => {
   }
 };
 
-if (accordionTriggers) {
-  accordionTriggers.forEach(trigger => {
-    trigger.addEventListener('click', onAccordionClick);
+if (mainTriggersExist) {
+  mainAccordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', onMainAccordionClick);
+  });
+}
+
+const onCatalogAccordionClick = (evt) => {
+  const id = evt.target.getAttribute('data-accordion');
+  const item = filterList.querySelector('li[data-accordion="' + id + '"]');
+
+  if (item) {
+    item.classList.toggle('filter__tab--show');
+  }
+};
+
+if (catalogTriggersExist) {
+  catalogAccordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', onCatalogAccordionClick);
   });
 }

@@ -66,6 +66,8 @@
 }
 
 .novelty__item {
+  max-width: none;
+
   &--nojs {
     margin-right: 30px;
   }
@@ -106,6 +108,14 @@
   border-bottom: 1px solid $header-background-brown;
   display: block;
   text-align: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
 }
 
 .novelty__arrows {
@@ -258,6 +268,27 @@
   cursor: pointer;
   width: 100%;
 }
+
+.novelty__pagination button:hover {
+  opacity: 0.7;
+}
+
+.novelty__pagination button:active {
+  opacity: 0.4;
+}
+
+.novelty__pagination--active button {
+  pointer-events: none;
+}
+
+.novelty__pagination--active button:hover {
+  opacity: 1;
+}
+
+.novelty__pagination--active button:active {
+  opacity: 1;
+}
+
 
 .novelty--disable-transition {
   transition: none;

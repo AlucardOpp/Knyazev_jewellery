@@ -1,0 +1,226 @@
+.filter ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter__tab {
+  border-bottom: 1px solid $header-background-brown;
+  border-right: 1px solid $header-background-brown;
+  border-left: 1px solid $header-background-brown;
+  box-sizing: border-box;
+
+  &:first-child {
+    border-top: 1px solid $header-background-brown;
+  }
+}
+
+.filter__list {
+  margin-bottom: 35px;
+  max-width: 250px;
+}
+
+.filter__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.filter__tab button {
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  line-height: 130%;
+  color: $black;
+  background-color: $white;
+  border: none;
+  padding: 24px 45px 22px 24px;
+  text-align: left;
+  position: relative;
+  overflow-wrap: break-word;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 24px;
+    right: 26px;
+    border-top: 1px solid $header-background-brown;
+    border-right: 1px solid $header-background-brown;
+    transform: rotate(135deg);
+  }
+}
+
+.filter__tab--show button {
+  padding-bottom: 23px;
+
+  &::after {
+    transform: rotate(-45deg);
+    top: 31px;
+  }
+}
+
+.filter__tab ul {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0 34px 16px 34px;
+}
+
+.filter__tab--show ul {
+  display: flex;
+}
+
+.filter__item {
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter__item label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: $black;
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  overflow-wrap: break-word;
+  max-width: 98px;
+  text-align: start;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    left: 0;
+    top: 2px;
+    height: 15px;
+    box-sizing: border-box;
+    border: 1px solid $header-background-brown;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+input:checked + label::before {
+  background-color: $header-background-brown;
+}
+
+input:focus + label {
+  outline: 1px auto $black;
+}
+
+.filter__submit,
+.filter__clear {
+  background-color: $header-background-brown;
+  color: $white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 130%;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.filter__tab--show .filter__range-controls {
+  display: block;
+}
+
+.filter__clear {
+  color: $black;
+  background-color: $white;
+  border: 1px solid $header-background-brown;
+  padding: 23px;
+}
+
+.filter__range-controls {
+  padding: 3px 25px 50px 25px;
+  position: relative;
+  display: none;
+}
+
+.filter__scale {
+  height: 1px;
+  background-color: $article-background-brown;
+}
+
+.filter__bar {
+  height: 1px;
+  background-color: $header-background-brown;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.filter__range-toggle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: $header-background-brown;
+  border-radius: 50%;
+  cursor: pointer;
+  top: -4px;
+
+  &--min {
+    left: 28%;
+  }
+
+  &--max {
+    left: 70%;
+  }
+
+  &:hover {
+    background-color: $header-background-brown-70;
+  }
+
+  &:active {
+    background-color: $header-background-brown-40;
+  }
+}
+
+.filter__range-toggle:hover span,
+.filter__range-toggle:active span {
+  opacity: 1;
+}
+
+.filter__range-toggle span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: $black;
+  position: absolute;
+  bottom: -24px;
+  left: -8px;
+  min-width: 34px;
+  overflow-wrap: break-word;
+  pointer-events: none;
+}

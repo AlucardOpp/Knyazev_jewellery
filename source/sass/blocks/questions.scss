@@ -1,5 +1,5 @@
 .questions {
-  margin-bottom: 120px;
+  margin-bottom: 101px;
 }
 
 .questions__wrapper {
@@ -52,6 +52,7 @@
   width: 100%;
   position: relative;
   text-align: start;
+  cursor: pointer;
 
   &::after {
     position: absolute;
@@ -63,6 +64,14 @@
     border-top: 1px solid $header-background-brown;
     border-right: 1px solid $header-background-brown;
     transform: rotate(135deg);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
   }
 }
 
@@ -100,7 +109,7 @@
 
 @media (max-width: $tablet-width) {
   .questions {
-    margin-bottom: 69px;
+    margin-bottom: 66px;
   }
 
   .questions__wrapper {
@@ -137,7 +146,7 @@
 
 @media (max-width: $mobile-width) {
   .questions {
-    margin-bottom: 60px;
+    margin-bottom: 52px;
   }
 
   .questions__wrapper {
