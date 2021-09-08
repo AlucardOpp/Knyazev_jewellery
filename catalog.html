@@ -25,7 +25,7 @@
         <input type="text" id="search" name="search" aria-label="Search field" placeholder="Type here to search" autocomplete="off">
       </form>
       <button class="page-header__menu-button page-header__menu-button--nojs" type="button" aria-label=""></button>
-      <a class="page-header__logo page-header__logo--nojs" href="./main.html" aria-label="Go to home page">
+      <a class="page-header__logo page-header__logo--catalog page-header__logo--nojs" href="./main.html" aria-label="Go to home page">
         <svg width="66" height="66">
           <use xlink:href="./img/sprite_auto.svg#icon-logo"></use>
         </svg>
@@ -85,6 +85,7 @@
   <main class="page-main">
     <div class="page-main__wrapper">
       <section class="filter">
+        <button class="filter__button">Filter</button>
         <form class="filter__form" action="https://echo.htmlacademy.ru" method="post">
           <h2 class="visually-hidden">Filter</h2>
           <div class="filter__list">
@@ -150,6 +151,7 @@
           </div>
           <button class="filter__submit" type="submit" aria-label="Apply filter selections">Apply</button>
           <button class="filter__clear" type="button" aria-label="Clear filter selections">Clear All</button>
+          <button class="filter__close" type="button" aria-label="Close filter"></button>
         </form>
       </section>
       <section class="cards">
