@@ -7,6 +7,8 @@ const pageHeaderLogo = document.querySelector('.page-header__logo');
 const pageHeaderCart = document.querySelector('.page-header__cart');
 const pageHeaderMenu = document.querySelector('.page-header__menu');
 const pageHeaderPromo = document.querySelector('.page-header__promo');
+const pageMain = document.querySelector('.page-main');
+const pageMainWrapper = document.querySelector('.page-main__wrapper');
 const novelty = document.querySelector('.novelty');
 const noveltySlick = document.querySelector('.novelty__slick');
 const noveltyItems = document.querySelectorAll('.novelty__item');
@@ -17,6 +19,8 @@ const questions = document.querySelector('.questions');
 const filterList = document.querySelector('.filter__list');
 const filterForm = document.querySelector('.filter__form');
 const filterClearButton = document.querySelector('.filter__clear');
+const filterButton = document.querySelector('.filter__button');
+const filterClose = document.querySelector('.filter__close');
 let mainAccordionTriggers;
 let catalogAccordionTriggers;
 let mainTriggersExist = false;
@@ -32,7 +36,7 @@ if (filterList) {
   catalogAccordionTriggers = filterList.querySelectorAll('button');
 }
 
-if(filterClearButton) {
+if (filterClearButton) {
   filterClearButton.addEventListener('click', () => {
     filterForm.reset();
   });
@@ -123,6 +127,7 @@ if (pageHeaderMenu) {
 
 if (pageHeaderMenuButton) {
   pageHeaderMenuButton.addEventListener('click', () => {
+    window.scrollTo(0, 0);
     if (pageHeader) {
       pageHeader.classList.toggle('page-header--opened');
     }
@@ -184,5 +189,45 @@ const onCatalogAccordionClick = (evt) => {
 if (catalogTriggersExist) {
   catalogAccordionTriggers.forEach(trigger => {
     trigger.addEventListener('click', onCatalogAccordionClick);
+  });
+}
+
+const closeForm = () => {
+  pageMain.classList.remove('page-main--show');
+  if (body) {
+    body.classList.remove('body--hidden');
+  }
+  document.removeEventListener('keydown', onEscKeydown);
+  pageMain.removeEventListener('click', onOverlayClick);
+  if (filterClose) {
+    filterClose.removeEventListener('click', closeForm);
+  }
+};
+
+const onEscKeydown = (evt) => {
+  if (evt.key === 'Escape' || evt.key === 'Esc') {
+    closeForm();
+  }
+}
+const onOverlayClick = (evt) => {
+  const target = evt.target;
+  const itsForm = target === filterButton || filterForm.contains(target);
+  if (!itsForm) {
+    closeForm();
+  }
+};
+
+if (filterButton) {
+  filterButton.addEventListener('click', () => {
+    pageMain.classList.add('page-main--show');
+    window.scrollTo(0, 0);
+    if (body) {
+      body.classList.add('body--hidden');
+    }
+    document.addEventListener('keydown', onEscKeydown);
+    pageMain.addEventListener('click', onOverlayClick);
+    if (filterClose) {
+      filterClose.addEventListener('click', closeForm);
+    }
   });
 }

@@ -74,7 +74,7 @@
   display: none;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 0 34px 16px 34px;
+  padding: 0 34px 28px 34px;
 }
 
 .filter__tab--show ul {
@@ -85,6 +85,10 @@
   margin-bottom: 12px;
   display: flex;
   flex-wrap: wrap;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .filter__item label {
@@ -128,7 +132,8 @@ input:focus + label {
 }
 
 .filter__submit,
-.filter__clear {
+.filter__clear,
+.filter__button {
   background-color: $header-background-brown;
   color: $white;
   box-sizing: border-box;
@@ -137,7 +142,7 @@ input:focus + label {
   align-items: center;
   padding: 24px;
   font-weight: 500;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
   font-size: 16px;
   line-height: 130%;
   border: none;
@@ -152,6 +157,10 @@ input:focus + label {
   }
 }
 
+.filter__button {
+  display: none;
+}
+
 .filter__tab--show .filter__range-controls {
   display: block;
 }
@@ -164,7 +173,7 @@ input:focus + label {
 }
 
 .filter__range-controls {
-  padding: 3px 25px 50px 25px;
+  padding: 3px 25px 49px 25px;
   position: relative;
   display: none;
 }
@@ -223,4 +232,236 @@ input:focus + label {
   min-width: 34px;
   overflow-wrap: break-word;
   pointer-events: none;
+}
+
+.filter__close {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .filter__form {
+    position: relative;
+    display: none;
+    width: 442px;
+    background-color: $white;
+    box-shadow: 0 5px 32px $form-shadow-black;
+    min-height: 609px;
+    margin: 58px 0;
+    z-index: 5;
+  }
+
+  .filter__button {
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .filter__submit,
+  .filter__clear {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .filter__clear {
+    margin-bottom: 40px;
+  }
+
+  .filter__tab {
+    border: none;
+    border-bottom: 1px solid $header-background-brown;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .filter__list {
+    max-width: none;
+    margin-bottom: 40px;
+  }
+
+  .filter__item label {
+    font-size: 16px;
+    max-width: 282px;
+    padding-left: 30px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+      top: 0;
+    }
+  }
+
+  .filter__tab button {
+    padding: 34px 40px;
+    font-size: 18px;
+
+    &::after {
+      width: 16px;
+      height: 16px;
+      top: 32px;
+      right: 43px;
+    }
+  }
+
+  .filter__tab ul {
+    padding: 8px 50px 37px 50px;
+  }
+
+  .filter__tab--show button {
+    padding-bottom: 17px;
+
+    &::after {
+      top: 43px;
+    }
+  }
+
+  .filter__item {
+    margin-bottom: 18px;
+  }
+
+  .filter__range-controls {
+    max-width: 304px;
+    padding: 17px 50px 69px 50px;
+  }
+
+  .filter__scale {
+    position: relative;
+    top: -1px;
+  }
+
+  .filter__range-toggle {
+    width: 18px;
+    height: 18px;
+    top: 8px;
+
+    &--min {
+      left: 23.5%;
+    }
+
+    &--max {
+      left: 67%;
+    }
+  }
+
+  .filter__range-toggle span {
+    font-size: 16px;
+    min-width: 39px;
+    bottom: -27px;
+    left: -9px;
+  }
+
+  .filter__close {
+    display: inline-block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: none;
+    padding: 0;
+    background-color: $black;
+    border-radius: 50%;
+    right: -16px;
+    top: -16px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.4;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 1px;
+      border-bottom: 2px solid $white;
+      transform: rotate(135deg);
+      left: 8px;
+      top: 15px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 1px;
+      border-bottom: 2px solid $white;
+      transform: rotate(45deg);
+      left: 8px;
+      top: 14px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .filter__button {
+    margin-bottom: 40px;
+  }
+
+  .filter__form {
+    width: auto;
+    min-width: 270px;
+    min-height: 504px;
+    margin-top: 76px;
+    margin-bottom: 60px;
+  }
+
+  .filter__tab button {
+    padding: 24px 20px;
+
+    &::after {
+      width: 13px;
+      height: 13px;
+      top: 24px;
+      right: 23px;
+    }
+  }
+
+  .filter__tab ul {
+    padding: 1px 30px 27px;
+  }
+
+  .filter__tab--show button::after {
+    top: 33px;
+  }
+
+  .filter__clear,
+  .filter__submit {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .filter__submit {
+    margin-bottom: 20px;
+  }
+
+  .filter__list,
+  .filter__clear {
+    margin-bottom: 30px;
+  }
+
+  .filter__close {
+    right: -10px;
+  }
+
+  .filter__range-controls {
+    max-width: none;
+    width: 250px;
+    padding: 10px 10px 59px;
+  }
+
+  .filter__range-toggle {
+    top: 1px;
+
+    &--min {
+      left: 18.5%;
+    }
+
+    &--max {
+      left: 69.5%;
+    }
+  }
 }

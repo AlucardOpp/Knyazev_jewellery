@@ -27,12 +27,14 @@
 .page-header__logo {
   margin-left: -50px;
 
-  &:hover {
-    opacity: 0.7;
-  }
+  &--catalog {
+    &:hover {
+      opacity: 0.7;
+    }
 
-  &:active {
-    opacity: 0.4;
+    &:active {
+      opacity: 0.4;
+    }
   }
 }
 
@@ -251,6 +253,10 @@
       width: 100%;
       overflow-y: scroll;
       z-index: 2;
+    }
+
+    &--catalog {
+      margin-bottom: 50px;
     }
   }
 
@@ -487,6 +493,14 @@
     &--opened {
       display: none;
     }
+
+    &--catalog {
+      background-image: url("../img/promo-background-catalog-tablet.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/promo-background-catalog-tablet@2x.jpg");
+      }
+    }
   }
 
   .page-header__promo h1 {
@@ -496,11 +510,20 @@
   .page-header__promo p {
     margin-left: -17px;
   }
+
+  .page-header__promo--catalog h1,
+  .page-header__promo--catalog p {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: $mobile-width) {
   .page-header {
     margin-bottom: 60px;
+
+    &--catalog {
+      margin-bottom: 40px;
+    }
   }
 
   .page-header__wrapper {
@@ -528,13 +551,29 @@
     @media (min-resolution: 2dppx) {
       background-image: url("../img/promo-background-main-mobile@2x.jpg");
     }
+
+    &--catalog {
+      background-image: url("../img/promo-background-catalog-mobile.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/promo-background-catalog-mobile@2x.jpg");
+      }
+    }
   }
 
   .page-header__promo h1 {
-    font-size: 38px;
+    font-size: 34px;
 
     &:first-child {
       padding-top: 184px;
+    }
+  }
+
+  .page-header__promo--catalog h1 {
+    font-size: 34px;
+
+    &:first-child {
+      padding-top: 74px;
     }
   }
 
@@ -543,6 +582,19 @@
 
     &:last-child {
       padding-bottom: 182px;
+    }
+  }
+
+  .page-header__promo--catalog p {
+    font-size: 22px;
+    max-width: none;
+    padding-left: 38px;
+    padding-right: 37px;
+    line-height: 120%;
+    text-align: center;
+
+    &:last-child {
+      padding-bottom: 78px;
     }
   }
 

@@ -80,7 +80,41 @@
 .cards__item img,
 .cards__item picture {
   width: 100%;
-  // height: auto;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+@media (max-width: $tablet-width) {
+  .cards ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards__item img {
+    height: 208px;
+  }
+
+  .cards__item picture {
+    height: 208px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .cards ul {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 26px;
+  }
+
+  .cards__item {
+    max-width: none;
+  }
+
+  .cards__item img,
+  .cards__item picture {
+    height: auto;
+    max-height: 272px;
+  }
+
+  .cards__item h3 {
+    margin-top: 18px;
+  }
 }
