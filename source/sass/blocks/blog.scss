@@ -72,7 +72,6 @@
 
 .blog__item {
   margin-bottom: 30px;
-  height: 100%;
 
   &:last-child {
     margin-bottom: 0;
@@ -88,6 +87,7 @@
 
   &--big {
     grid-template-columns: auto;
+    min-height: 630px;
   }
 }
 
@@ -211,6 +211,7 @@
 
     &--big {
       grid-template-columns: repeat(2, 1fr);
+      min-height: auto;
     }
   }
 
