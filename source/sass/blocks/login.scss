@@ -1,0 +1,291 @@
+.login {
+  display: none;
+  position: absolute;
+  background-color: $white;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+
+  &--show {
+    display: block;
+  }
+}
+
+.login__form {
+  width: 430px;
+  min-height: 586px;
+  background-color: $article-background-brown;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url("../img/login-background.jpg");
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  &--overflow {
+    top: 0;
+    transform: translateY(0) translateX(-50%);
+    left: 50%;
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/login-background@2x.jpg");
+  }
+}
+
+.login__wrapper {
+  width: 340px;
+  margin: 0 45px 60px 45px;
+  padding-top: 189px;
+}
+
+.login h2 {
+  font-family: "Cormorant Garamond", "Arial", sans-serif;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  font-size: 34px;
+  line-height: 130%;
+  color: $black;
+  text-align: center;
+}
+
+.login__field {
+  position: relative;
+  margin-bottom: 28px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.login__field input {
+  background-color: transparent;
+  color: $black;
+  border: 0;
+  padding: 7px 10px 8px 0;
+  width: calc(100% - 10px);
+  font-size: 14px;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 21px;
+  border-bottom: 1px solid $black;
+
+  &::placeholder {
+    color: $footer-mailing-grey;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.login__field a {
+  position: absolute;
+  bottom: -23px;
+  right: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 18px;
+  color: $footer-mailing-grey;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.login__submit {
+  border: none;
+  cursor: pointer;
+  background-color: $header-background-brown;
+  padding: 24px;
+  color: $white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  width: 100%;
+  margin: 40px 0 15px 0;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.login__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 53px;
+}
+
+.login__container p {
+  margin: 0 9px 0 0;
+  color: $footer-mailing-grey;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.login__container a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 21px;
+  color: $black;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.login__close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 13px;
+  top: 12px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 1px;
+    border-bottom: 2px solid $black;
+    transform: rotate(135deg);
+    left: 6px;
+    top: 14px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 1px;
+    border-bottom: 2px solid $black;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 13px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .login__form {
+    width: 442px;
+    background-image: url("../img/login-background-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/login-background-tablet@2x.jpg");
+    }
+  }
+
+  .login__wrapper {
+    margin-left: 51px;
+    margin-right: 51px;
+  }
+
+  .login__close {
+    right: 16px;
+    top: 15px;
+
+    &::after,
+    &::before {
+      border-bottom-width: 3px;
+      width: 25px;
+      top: 13px;
+      left: 2px;
+    }
+  }
+
+  .login__container {
+    margin: 0 57px;
+  }
+
+  .login__container p {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .login__form {
+    width: 270px;
+    min-height: 470px;
+
+    background-image: url("../img/login-background-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/login-background-mobile@2x.jpg");
+    }
+  }
+
+  .login__wrapper {
+    width: auto;
+    margin: 0 15px;
+    padding-top: 121px;
+  }
+
+  .login h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .login__field {
+    margin-bottom: 23px;
+  }
+
+  .login__close {
+    right: 8px;
+    top: 7px;
+
+    &::after {
+      width: 17px;
+      border-width: 2px;
+      left: 6px;
+      top: 14px;
+    }
+
+    &::before {
+      width: 17px;
+      border-width: 2px;
+      left: 6px;
+      top: 13px;
+    }
+  }
+
+  .login__submit {
+    margin: 35px 0 15px 0;
+  }
+
+  .login__container {
+    margin: 0 8px;
+  }
+
+  .login__container p {
+    margin-right: 5px;
+  }
+}

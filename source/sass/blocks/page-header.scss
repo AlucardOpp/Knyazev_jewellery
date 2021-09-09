@@ -4,6 +4,10 @@
   &--catalog {
     margin-bottom: 80px;
   }
+
+  &--login {
+    margin-bottom: 100px;
+  }
 }
 
 .page-header__wrapper {
@@ -83,6 +87,10 @@
   max-width: 131px;
   column-gap: 35px;
   margin-top: 12px;
+
+  &--login {
+    grid-template-columns: auto;
+  }
 }
 
 .page-header__container a {
@@ -299,7 +307,17 @@
       opacity: 0;
     }
 
+    &:hover {
+      opacity: 0.7;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
     &:focus {
+      opacity: 1;
+
       &::placeholder {
         opacity: 0;
       }
@@ -473,6 +491,14 @@
     font-size: 18px;
     line-height: 130%;
     color: $white-75;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.4;
+    }
   }
 
   .page-header__login {
@@ -481,6 +507,15 @@
     color: $white;
     font-size: 18px;
     line-height: 130%;
+    max-width: 49px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.4;
+    }
   }
 
   .page-header__promo {

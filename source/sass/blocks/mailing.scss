@@ -28,7 +28,6 @@
 
 .mailing__field {
   position: relative;
-  border-bottom: 1px solid $white;
 }
 
 .mailing__field input {
@@ -39,6 +38,7 @@
   padding: 9px 110px 9px 0;
   font-size: 14px;
   line-height: 21px;
+  border-bottom: 1px solid $white;
 
   &:hover {
     opacity: 0.7;
@@ -53,7 +53,7 @@
   }
 }
 
-.mailing__button {
+.mailing__field button {
   position: absolute;
   min-width: 62px;
   border: none;

@@ -1,6 +1,8 @@
 'use strict';
 
+const FOCUSABLE_ELEMENTS_STRING = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 const pageHeader = document.querySelector('.page-header');
+const html = document.querySelector('.page');
 const pageHeaderField = document.querySelector('.page-header__field');
 const pageHeaderMenuButton = document.querySelector('.page-header__menu-button');
 const pageHeaderLogo = document.querySelector('.page-header__logo');
@@ -21,6 +23,14 @@ const filterForm = document.querySelector('.filter__form');
 const filterClearButton = document.querySelector('.filter__clear');
 const filterButton = document.querySelector('.filter__button');
 const filterClose = document.querySelector('.filter__close');
+const pageHeaderLog = document.querySelector('.page-header__log');
+const pageHeaderLogin = document.querySelector('.page-header__login');
+const login = document.querySelector('.login');
+const loginForm = document.querySelector('.login__form');
+const loginEmail = document.querySelector('#email-login');
+const loginClose = document.querySelector('.login__close');
+let windowHeight = window.screen.height;
+let lastFocusedElement;
 let mainAccordionTriggers;
 let catalogAccordionTriggers;
 let mainTriggersExist = false;
@@ -230,4 +240,104 @@ if (filterButton) {
       filterClose.addEventListener('click', closeForm);
     }
   });
+}
+
+const closeLogin = () => {
+  login.classList.remove('login--show');
+  body.classList.remove('body--hidden');
+  html.classList.remove('page--hidden');
+  loginClose.removeEventListener('click', closeLogin);
+  document.removeEventListener('keydown', onEscLoginKeydown);
+  login.removeEventListener('mousedown', onOverlayLoginClick);
+  lastFocusedElement.focus();
+  html.classList.remove('page--overflow');
+  body.classList.remove('body--overflow');
+  loginForm.classList.remove('login__form--overflow');
+};
+
+const onOverlayLoginClick = (evt) => {
+  const target = evt.target;
+  const itsForm = target === pageHeaderLog || loginForm.contains(target);
+  if (!itsForm) {
+    closeLogin();
+  }
+};
+
+const onEscLoginKeydown = (evt) => {
+  if (evt.key === 'Escape' || evt.key === 'Esc') {
+    closeLogin();
+  }
+};
+
+const onPageHeaderLoginClick = () => {
+  lastFocusedElement = document.activeElement;
+  let focusableElements = login.querySelectorAll(FOCUSABLE_ELEMENTS_STRING);
+  focusableElements = Array.prototype.slice.call(focusableElements);
+  let firstTabStop = focusableElements[0];
+  let lastTabStop = focusableElements[focusableElements.length - 1];
+  if (login) {
+    login.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Tab') {
+        if (evt.shiftKey) {
+          if (document.activeElement === firstTabStop) {
+            evt.preventDefault();
+            lastTabStop.focus();
+          }
+        } else {
+          if (document.activeElement === lastTabStop) {
+            evt.preventDefault();
+            firstTabStop.focus();
+          }
+        }
+      }
+    });
+    login.classList.add('login--show');
+    const loginHeight = loginForm.offsetHeight;
+    loginEmail.focus();
+    loginClose.addEventListener('click', closeLogin);
+    document.addEventListener('keydown', onEscLoginKeydown);
+    login.addEventListener('mousedown', onOverlayLoginClick);
+    body.classList.add('body--hidden');
+    html.classList.add('page--hidden');
+    if (pageHeader.classList.contains('page-header--opened')) {
+      pageHeader.classList.remove('page-header--opened');
+      pageHeaderMenu.classList.remove('page-header__menu--opened');
+      pageHeaderPromo.classList.remove('page-header__promo--opened');
+      pageHeaderField.classList.remove('page-header__field--opened');
+      pageHeaderMenuButton.classList.remove('page-header__menu-button--opened');
+      pageHeaderLogo.classList.remove('page-header__logo--opened');
+      pageHeaderCart.classList.remove('page-header__cart--opened');
+    }
+    if (login.classList.contains('login--show')) {
+      if (loginHeight > windowHeight) {
+        loginForm.classList.add('login__form--overflow');
+        html.classList.add('page--overflow');
+        body.classList.add('body--overflow');
+      } else {
+        loginForm.classList.remove('login__form--overflow');
+        html.classList.remove('page--overflow');
+        body.classList.remove('body--overflow');
+      }
+
+      window.addEventListener('resize', () => {
+        if (login.classList.contains('login--show')) {
+          windowHeight = window.screen.height;
+          if (loginHeight > windowHeight) {
+            loginForm.classList.add('login__form--overflow');
+            html.classList.add('page--overflow');
+            body.classList.add('body--overflow');
+          } else {
+            loginForm.classList.remove('login__form--overflow');
+            html.classList.remove('page--overflow');
+            body.classList.remove('body--overflow');
+          }
+        }
+      });
+    }
+  }
+};
+
+if (pageHeaderLog) {
+  pageHeaderLog.addEventListener('click', onPageHeaderLoginClick);
+  pageHeaderLogin.addEventListener('click', onPageHeaderLoginClick);
 }

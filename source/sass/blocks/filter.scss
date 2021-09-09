@@ -246,7 +246,7 @@ input:focus + label {
     background-color: $white;
     box-shadow: 0 5px 32px $form-shadow-black;
     min-height: 609px;
-    margin: 58px 0;
+    margin: 17px 0;
     z-index: 5;
   }
 
@@ -402,11 +402,10 @@ input:focus + label {
   }
 
   .filter__form {
-    width: auto;
-    min-width: 270px;
+    width: 270px;
     min-height: 504px;
-    margin-top: 76px;
-    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .filter__tab button {
