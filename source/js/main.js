@@ -35,6 +35,20 @@ let mainAccordionTriggers;
 let catalogAccordionTriggers;
 let mainTriggersExist = false;
 let catalogTriggersExist = false;
+let isStorageSupport = true;
+let storageEmail = '';
+
+try {
+  storageEmail = localStorage.getItem('email');
+} catch (err) {
+  isStorageSupport = false;
+}
+
+if (login && login.classList.contains('login--page')) {
+  if (storageEmail) {
+    loginEmail.value = storageEmail;
+  }
+}
 
 if (questions) {
   mainTriggersExist = true;
@@ -269,7 +283,9 @@ const onEscLoginKeydown = (evt) => {
   }
 };
 
-const onPageHeaderLoginClick = () => {
+const onPageHeaderLoginClick = (evt) => {
+  evt.preventDefault();
+  window.scrollTo(0, 0);
   lastFocusedElement = document.activeElement;
   let focusableElements = login.querySelectorAll(FOCUSABLE_ELEMENTS_STRING);
   focusableElements = Array.prototype.slice.call(focusableElements);
@@ -294,6 +310,16 @@ const onPageHeaderLoginClick = () => {
     login.classList.add('login--show');
     const loginHeight = loginForm.offsetHeight;
     loginEmail.focus();
+    if (storageEmail) {
+      loginEmail.value = storageEmail;
+    }
+    loginForm.addEventListener('submit', () => {
+      if (isStorageSupport) {
+        if (loginEmail.value) {
+          localStorage.setItem('email', loginEmail.value);
+        }
+      }
+    });
     loginClose.addEventListener('click', closeLogin);
     document.addEventListener('keydown', onEscLoginKeydown);
     login.addEventListener('mousedown', onOverlayLoginClick);

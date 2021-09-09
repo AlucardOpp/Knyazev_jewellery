@@ -2,7 +2,7 @@
   margin-bottom: 117px;
 
   &--nojs {
-    margin-bottom: 121px;
+    margin-bottom: 116px;
   }
 }
 
@@ -79,7 +79,7 @@
 
 
 .novelty__item--nojs h3 {
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
 .novelty__item--nojs a {
@@ -298,6 +298,7 @@
 .novelty__item img {
   width: 100%;
   height: auto;
+  background-color: $cards-background-grey;
 }
 
 .novelty__slick--loading .novelty__track {
@@ -406,7 +407,7 @@
   }
 
   .novelty__item--nojs h3 {
-    margin-top: 17px;
+    margin-top: 21px;
   }
 
   .novelty__item--nojs a {

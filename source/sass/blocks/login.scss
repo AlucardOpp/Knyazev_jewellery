@@ -9,6 +9,15 @@
   &--show {
     display: block;
   }
+
+  &--page {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    margin-bottom: 18px;
+  }
 }
 
 .login__form {
@@ -19,6 +28,7 @@
   background-repeat: no-repeat;
   position: absolute;
   background-image: url("../img/login-background.jpg");
+  background-size: 430px 138px;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -29,6 +39,13 @@
     left: 50%;
   }
 
+  &--page {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: translateY(0) translateX(0);
+  }
+
   @media (min-resolution: 2dppx) {
     background-image: url("../img/login-background@2x.jpg");
   }
@@ -36,11 +53,12 @@
 
 .login__wrapper {
   width: 340px;
-  margin: 0 45px 60px 45px;
+  margin: 0 45px 54px 45px;
   padding-top: 189px;
 }
 
-.login h2 {
+.login h2,
+.login h1 {
   font-family: "Cormorant Garamond", "Arial", sans-serif;
   font-weight: 700;
   margin: 0 0 25px 0;
@@ -195,7 +213,12 @@
 }
 
 @media (max-width: $tablet-width) {
+  .login--page {
+    margin-bottom: 36px;
+  }
+
   .login__form {
+    background-size: 442px 138px;
     width: 442px;
     background-image: url("../img/login-background-tablet.jpg");
 
@@ -232,9 +255,14 @@
 }
 
 @media (max-width: $mobile-width) {
+  .login--page {
+    margin-bottom: 26px;
+  }
+
   .login__form {
     width: 270px;
     min-height: 470px;
+    background-size: 270px 84px;
 
     background-image: url("../img/login-background-mobile.jpg");
 
@@ -249,7 +277,8 @@
     padding-top: 121px;
   }
 
-  .login h2 {
+  .login h2,
+  .login h1 {
     font-size: 24px;
     margin-bottom: 20px;
   }

@@ -7,30 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Jewellery - Perfection made to be yours">
-  <link rel="preload" href="./fonts/Poppins-Regular.woff2" as="font" crossorigin="">
-  <link rel="preload" href="./fonts/Poppins-Medium.woff2" as="font" crossorigin="">
-  <link rel="preload" href="./fonts/Poppins-Bold.woff2" as="font" crossorigin="">
-  <link rel="preload" href="./fonts/CormorantGaramond-Italic.woff2" as="font" crossorigin="">
-  <link rel="preload" href="./fonts/CormorantGaramond-SemiBold.woff2" as="font" crossorigin="">
-  <link rel="preload" href="./fonts/CormorantGaramond-Bold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="./fonts/Poppins-Regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/Poppins-Medium.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/Poppins-Bold.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/CormorantGaramond-Italic.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/CormorantGaramond-SemiBold.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/CormorantGaramond-Bold.woff2" as="font" crossorigin>
   <link rel="stylesheet" href="./css/normalize.min.css">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body class="body">
-  <header class="page-header page-header--login page-header--nojs">
+  <header class="page-header page-header--nojs">
     <div class="page-header__wrapper">
       <form class="page-header__field page-header__field--nojs">
         <label class="visually-hidden" for="search">Search</label>
         <input type="text" id="search" name="search" aria-label="Search field" placeholder="Type here to search" autocomplete="off">
       </form>
       <button class="page-header__menu-button page-header__menu-button--nojs" type="button" aria-label="Open/Close Menu"></button>
-      <a class="page-header__logo page-header__logo--login page-header__logo--nojs" href="./main.html" aria-label="Go to home page">
+      <a class="page-header__logo page-header__logo--index page-header__logo--nojs" href="./main.html" aria-label="Go to home page">
         <svg width="66" height="66">
           <use xlink:href="./img/sprite_auto.svg#icon-logo"></use>
         </svg>
       </a>
-      <div class="page-header__container page-header__container--login">
+      <div class="page-header__container page-header__container--index">
         <a class="page-header__cart page-header__cart--nojs" href="#" aria-label="Open cart">
           <p>Cart</p>
           <span>0</span>
@@ -77,26 +77,21 @@
   </header>
 
   <main class="page-main">
-    <section class="login login--page">
-      <form class="login__form login__form--page" action="https://echo.htmlacademy.ru" method="post">
-        <div class="login__wrapper">
-          <h1>Log In</h1>
-          <div class="login__field">
-            <label class="visually-hidden" for="email-login">Email</label>
-            <input type="email" id="email-login" name="email-login" aria-label="Mail filling field" placeholder="Your E-mail" autocomplete="off" required="">
-          </div>
-          <div class="login__field">
-            <label class="visually-hidden" for="password-login">Password</label>
-            <input type="password" id="password-login" name="password-login" aria-label="Password filling field" placeholder="Password" autocomplete="off" required="">
-            <a href="#" aria-label="Password recovery">Forgot your password?</a>
-          </div>
-          <button class="login__submit" type="submit" aria-label="Login">Log In</button>
-          <div class="login__container">
-            <p>Don’t have an account?</p>
-            <a href="#" aria-label="Sign up account">Sign up</a>
-          </div>
-        </div>
-      </form>
+    <section class="spreading">
+      <div class="spreading__wrapper">
+        <h1>Spreading page</h1>
+        <ul>
+          <li>
+            <a href="./main.html" aria-label="Open main page">Main</a>
+          </li>
+          <li>
+            <a href="./catalog.html" aria-label="Open catalog page">Catalog</a>
+          </li>
+          <li>
+            <a href="./login.html" aria-label="Open login page">Login</a>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 
@@ -108,7 +103,7 @@
           <p>News and updates from CH. No spam, we promise.</p>
           <div class="mailing__field">
             <label class="visually-hidden" for="mailing-email">E-mail</label>
-            <input type="text" id="mailing-email" name="mailing-email" aria-label="Mailing E-mail field" placeholder="Your E-mail" autocomplete="off" required="">
+            <input type="text" id="mailing-email" name="mailing-email" aria-label="Mailing E-mail field" placeholder="Your E-mail" autocomplete="off" required>
             <button class="mailing__button" type="submit" aria-label="Confirm sign up">Sign Up</button>
           </div>
         </form>

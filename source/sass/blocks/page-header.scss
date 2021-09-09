@@ -6,7 +6,7 @@
   }
 
   &--login {
-    margin-bottom: 100px;
+    margin-bottom: 18px;
   }
 }
 
@@ -31,7 +31,9 @@
 .page-header__logo {
   margin-left: -50px;
 
-  &--catalog {
+  &--catalog,
+  &--login,
+  &--index {
     &:hover {
       opacity: 0.7;
     }
@@ -88,7 +90,8 @@
   column-gap: 35px;
   margin-top: 12px;
 
-  &--login {
+  &--login,
+  &--index {
     grid-template-columns: auto;
   }
 }
@@ -235,7 +238,7 @@
   max-width: 229px;
 
   &:last-child {
-    padding-bottom: 94px;
+    padding-bottom: 178px;
   }
 }
 
@@ -243,6 +246,10 @@
   font-size: 22px;
   max-width: 488px;
   font-weight: 500;
+
+  &:last-child {
+    padding-bottom: 91px;
+  }
 }
 
 @media (max-width: $tablet-width) {
@@ -265,6 +272,10 @@
 
     &--catalog {
       margin-bottom: 50px;
+    }
+
+    &--login {
+      margin-bottom: 36px;
     }
   }
 
@@ -559,6 +570,10 @@
     &--catalog {
       margin-bottom: 40px;
     }
+
+    &--login {
+      margin-bottom: 26px;
+    }
   }
 
   .page-header__wrapper {
@@ -597,7 +612,7 @@
   }
 
   .page-header__promo h1 {
-    font-size: 34px;
+    font-size: 38px;
 
     &:first-child {
       padding-top: 184px;

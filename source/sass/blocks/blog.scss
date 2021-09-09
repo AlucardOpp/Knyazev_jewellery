@@ -129,6 +129,7 @@
 
 .blog__image {
   height: 100%;
+  background-color: $photos-background-brown;
 
   &--big {
     grid-column: 1 / 2;
