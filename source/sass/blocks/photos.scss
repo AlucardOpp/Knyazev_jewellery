@@ -72,6 +72,7 @@
 
   @media (max-width: 1209px) {
     grid-template-columns: 2fr 3fr 4fr;
+    max-height: 443px;
   }
 }
 
@@ -83,8 +84,12 @@
 
 .photos__middle ul,
 .photos__middle li {
-  height: 100%;
+  height: auto;
   max-height: 443px;
+
+  @media (max-width: 1209px) {
+    height: 100%;
+  }
 }
 
 .photos__left ul {
@@ -115,6 +120,15 @@
 
   @media (max-width: 1209px) {
     width: 100%;
+  }
+}
+
+.photos__item--big picture,
+.photos__item--big img {
+  height: 414px;
+
+  @media (max-width: 1209px) {
+    height: 100%;
   }
 }
 
