@@ -84,6 +84,7 @@
 .photos__middle ul,
 .photos__middle li {
   height: 100%;
+  max-height: 443px;
 }
 
 .photos__left ul {
@@ -146,6 +147,11 @@
   .photos__right ul {
     column-gap: 16px;
     row-gap: 21px;
+  }
+
+  .photos__middle ul,
+  .photos__middle li {
+    max-height: none;
   }
 }
 
