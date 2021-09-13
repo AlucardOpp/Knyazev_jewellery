@@ -299,6 +299,7 @@
   width: 100%;
   height: auto;
   background-color: $cards-background-grey;
+  max-height: none;
 }
 
 .novelty__slick--loading .novelty__track {
