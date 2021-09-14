@@ -141,20 +141,20 @@
 }
 
 .page-header__links ul {
-  width: 524px;
+  width: 585px;
   margin: 0 auto;
   list-style: none;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(5, auto);
-  column-gap: 25px;
+  column-gap: 0;
 }
 
 .page-header__links li {
   max-width: 94px;
 
   &:nth-child(5n+1) {
-    margin-left: 21px;
+    margin-left: 49px;
   }
 }
 
